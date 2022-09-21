@@ -1,1 +1,21 @@
-<%= render "books/create", book:@book %>
+<%= render "books/create", book:@book, user:current_user %>
+
+<h2>Books</h2>
+
+  <tabel>
+    <thead>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+    </thead>
+    
+    <% @books.each do |book| %>
+      <tbody>
+        <tr>
+          <td><%= image_tag book.user.get_profile_image(100,100) %></td>
+          <td><%= book.title %></td>
+          <td><%= book.body %></td>
+        </tr>
+      </tbody>
+    <% end %>
+  </tabel>
