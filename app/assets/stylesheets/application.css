@@ -20,7 +20,21 @@
   box-sizing: border-box;
 }
 
-* {
-  margin: 15px;
+header {
+  background-color: #343a40!important;
+  color: white;
 }
 
+span {
+  
+}
+
+li {
+  display: inline;
+  list-style: none;
+  margin-left: auto;
+}
+
+a {
+  color: white;
+}
