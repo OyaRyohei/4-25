@@ -1,5 +1,27 @@
 <h1>User info</h1>
 
-
-
 <%= render "books/create", book:@book, user:current_user %>
+
+<h2>Books</h2>
+
+  <tabel>
+    <thead>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+    </thead>
+    
+    <% @books.each do |book| %>
+      <tbody>
+        <tr>
+          <%= link_to @user do %>
+            <td><%= image_tag book.user.get_profile_image(100,100) %></td>
+          <% end %>
+          <%= link_to book_path(book.id) do %>
+            <td><%= book.title %></td>
+          <% end %>
+          <td><%= book.body %></td>
+        </tr>
+      </tbody>
+    <% end %>
+  </tabel>
